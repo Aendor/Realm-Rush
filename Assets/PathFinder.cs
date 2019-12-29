@@ -20,14 +20,34 @@ public class PathFinder : MonoBehaviour
         Vector2Int.left
     };
 
-    void Start()
+    List<Waypoint> path = new List<Waypoint>();
+
+    public List<Waypoint> GetPath() // todo: maybe do this when we ask for the path?
     {
         LoadBlocks();
         ColorStartAndEnd();
-        PathFind();
+        BreadthFirstSearch();
+        CreatePath();
+
+        return path;
     }
 
-    private void PathFind()
+    private void CreatePath()
+    {
+        path.Add(endWaypoint);
+        
+        Waypoint previous = endWaypoint.exploredFrom;
+        while (previous != startWaypoint)
+        {
+            path.Add(previous);
+            previous = previous.exploredFrom;
+        }
+
+        path.Add(startWaypoint);
+        path.Reverse();
+    }
+
+    private void BreadthFirstSearch()
     {
         queue.Enqueue(startWaypoint);
         
@@ -39,8 +59,6 @@ public class PathFinder : MonoBehaviour
             ExploreNeighbours();
             searchCenter.isExplored = true;
         }
-        // todo: workout path
-        print("Finished pathfinding");
     }
 
     private void HaltIfEndFound()
@@ -59,11 +77,10 @@ public class PathFinder : MonoBehaviour
         {
             Vector2Int neighbourCoordinates = searchCenter.GetGridPos() + direction;
 
-            try
+            if (grid.ContainsKey(neighbourCoordinates))
             {
                 QueueNewNeighbours(neighbourCoordinates);
             }
-            catch { }
         }
     }
 
@@ -82,7 +99,7 @@ public class PathFinder : MonoBehaviour
         }
     }
 
-    private void ColorStartAndEnd()
+    private void ColorStartAndEnd() // Consider moving out
     {
         startWaypoint.SetTopColor(Color.green);
         endWaypoint.SetTopColor(Color.red);
@@ -104,11 +121,5 @@ public class PathFinder : MonoBehaviour
                 grid.Add(gridPos, waypoint);
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

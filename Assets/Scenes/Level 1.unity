@@ -950,7 +950,7 @@ PrefabInstance:
         type: 3}
       propertyPath: targetEnemy
       value: 
-      objectReference: {fileID: 1951702540}
+      objectReference: {fileID: 0}
     - target: {fileID: 4129498912950378410, guid: 2a96e2774bfecef40a5eee4c1e949035,
         type: 3}
       propertyPath: shootingDistance
@@ -3345,7 +3345,7 @@ PrefabInstance:
         type: 3}
       propertyPath: targetEnemy
       value: 
-      objectReference: {fileID: 1951702540}
+      objectReference: {fileID: 0}
     - target: {fileID: 4129498912950378410, guid: 2a96e2774bfecef40a5eee4c1e949035,
         type: 3}
       propertyPath: shootingDistance
@@ -3647,6 +3647,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1061308864}
+  - component: {fileID: 1061308865}
   m_Layer: 0
   m_Name: Enemies
   m_TagString: Untagged
@@ -3664,11 +3665,25 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1951702540}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1061308865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061308863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcfb4e39cea0c91438a9871ee6b932c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  secondsBetweenSpawns: 5
+  enemyPrefab: {fileID: 8540479755426890320, guid: 746c0ed1e9b813448a5c5dce21b291e5,
+    type: 3}
 --- !u!1001 &1103915078
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4499,7 +4514,7 @@ PrefabInstance:
         type: 3}
       propertyPath: targetEnemy
       value: 
-      objectReference: {fileID: 1951702540}
+      objectReference: {fileID: 0}
     - target: {fileID: 4129498912950378410, guid: 2a96e2774bfecef40a5eee4c1e949035,
         type: 3}
       propertyPath: shootingDistance
@@ -6150,7 +6165,7 @@ PrefabInstance:
         type: 3}
       propertyPath: targetEnemy
       value: 
-      objectReference: {fileID: 1951702540}
+      objectReference: {fileID: 0}
     - target: {fileID: 4129498912950378410, guid: 2a96e2774bfecef40a5eee4c1e949035,
         type: 3}
       propertyPath: shootingDistance
@@ -6459,79 +6474,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a467c20795e0fed40b0d21d2bebe3b04, type: 3}
---- !u!1001 &1882783209
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1061308864}
-    m_Modifications:
-    - target: {fileID: 1951702542, guid: 746c0ed1e9b813448a5c5dce21b291e5, type: 3}
-      propertyPath: hitPoints
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3918819403671719732, guid: 746c0ed1e9b813448a5c5dce21b291e5,
-        type: 3}
-      propertyPath: m_Name
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 3918819403671719733, guid: 746c0ed1e9b813448a5c5dce21b291e5,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3918819403671719733, guid: 746c0ed1e9b813448a5c5dce21b291e5,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3918819403671719733, guid: 746c0ed1e9b813448a5c5dce21b291e5,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3918819403671719733, guid: 746c0ed1e9b813448a5c5dce21b291e5,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3918819403671719733, guid: 746c0ed1e9b813448a5c5dce21b291e5,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3918819403671719733, guid: 746c0ed1e9b813448a5c5dce21b291e5,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3918819403671719733, guid: 746c0ed1e9b813448a5c5dce21b291e5,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3918819403671719733, guid: 746c0ed1e9b813448a5c5dce21b291e5,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3918819403671719733, guid: 746c0ed1e9b813448a5c5dce21b291e5,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3918819403671719733, guid: 746c0ed1e9b813448a5c5dce21b291e5,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3918819403671719733, guid: 746c0ed1e9b813448a5c5dce21b291e5,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 746c0ed1e9b813448a5c5dce21b291e5, type: 3}
 --- !u!1001 &1901385378
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6708,12 +6650,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4135240793724244, guid: 700ff3467e6f35c4d9307b685e8746d1,
     type: 3}
   m_PrefabInstance: {fileID: 539017347}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1951702540 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3918819403671719733, guid: 746c0ed1e9b813448a5c5dce21b291e5,
-    type: 3}
-  m_PrefabInstance: {fileID: 1882783209}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1981668515
 PrefabInstance:
@@ -7252,7 +7188,7 @@ PrefabInstance:
         type: 3}
       propertyPath: targetEnemy
       value: 
-      objectReference: {fileID: 1951702540}
+      objectReference: {fileID: 0}
     - target: {fileID: 4129498912950378410, guid: 2a96e2774bfecef40a5eee4c1e949035,
         type: 3}
       propertyPath: shootingDistance

@@ -32,8 +32,7 @@ public class Waypoint : MonoBehaviour
         {
             if (isPlaceable)
             {
-                Transform towers = GameObject.Find("Towers").transform;
-                Instantiate(towerPrefab, transform.position, Quaternion.identity, towers);
+                Instantiate(towerPrefab, transform.position, Quaternion.identity, transform);
                 isPlaceable = false;
             }
         }

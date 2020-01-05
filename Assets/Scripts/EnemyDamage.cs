@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,9 +24,10 @@ public class EnemyDamage : MonoBehaviour
     }
     private void KillEnemy()
     {
-        var vfx = Instantiate(deathParticlePrefab, transform.position, Quaternion.identity);
+        ParticleSystem vfx = Instantiate(deathParticlePrefab, transform.position, Quaternion.identity);
         vfx.Play();
-
+        Destroy(vfx.gameObject, vfx.main.duration);
+        
         Destroy(gameObject);
     }
 }
